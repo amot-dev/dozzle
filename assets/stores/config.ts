@@ -13,6 +13,7 @@ export interface Config {
   enableActions: boolean;
   enableShell: boolean;
   groupByNamespace: string;
+  groupedNetworks: string[];
   user?: {
     username: string;
     email: string;

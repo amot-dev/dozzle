@@ -201,6 +201,7 @@ func createServer(args cli.Args, hostService web.HostService) *http.Server {
 		EnableActions:    args.EnableActions,
 		EnableShell:      args.EnableShell,
 		GroupByNamespace: args.GroupByNamespace,
+		GroupedNetworks:  args.GroupedNetwork,
 		Labels:           args.Filter,
 	}
 

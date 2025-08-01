@@ -361,17 +361,24 @@ func newContainer(c docker.Summary, host string) container.Container {
 	if c.Labels["dev.dozzle.group"] != "" {
 		group = c.Labels["dev.dozzle.group"]
 	}
+
+	network_names := make([]string, 0, len(c.NetworkSettings.Networks))
+	for name := range c.NetworkSettings.Networks {
+		network_names = append(network_names, name)
+	}
+
 	return container.Container{
-		ID:      c.ID[:12],
-		Name:    name,
-		Image:   c.Image,
-		Command: c.Command,
-		Created: time.Unix(c.Created, 0),
-		State:   c.State,
-		Host:    host,
-		Labels:  c.Labels,
-		Stats:   utils.NewRingBuffer[container.ContainerStat](300), // 300 seconds of stats
-		Group:   group,
+		ID:       c.ID[:12],
+		Name:     name,
+		Image:    c.Image,
+		Command:  c.Command,
+		Created:  time.Unix(c.Created, 0),
+		State:    c.State,
+		Host:     host,
+		Labels:   c.Labels,
+		Stats:    utils.NewRingBuffer[container.ContainerStat](300), // 300 seconds of stats
+		Group:    group,
+		Networks: network_names,
 	}
 }
 

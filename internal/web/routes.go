@@ -27,17 +27,18 @@ const (
 
 // Config is a struct for configuring the web service
 type Config struct {
-	Base          string
-	Addr          string
-	Version       string
-	Hostname      string
-	NoAnalytics   bool
-	Dev           bool
-	Authorization Authorization
-	EnableActions bool
-	EnableShell   bool
+	Base             string
+	Addr             string
+	Version          string
+	Hostname         string
+	NoAnalytics      bool
+	Dev              bool
+	Authorization    Authorization
+	EnableActions    bool
+	EnableShell      bool
 	GroupByNamespace string
-	Labels        container.ContainerLabels
+	GroupedNetworks  []string
+	Labels           container.ContainerLabels
 }
 
 type Authorization struct {

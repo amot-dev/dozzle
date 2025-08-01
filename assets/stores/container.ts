@@ -159,6 +159,7 @@ export const useContainerStore = defineStore("container", () => {
           c.stats,
           c.group,
           c.health,
+          c.networks,
         );
       }),
     ];

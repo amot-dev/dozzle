@@ -52,6 +52,7 @@ func (h *handler) executeTemplate(w http.ResponseWriter, req *http.Request) {
 		config["enableActions"] = h.config.EnableActions
 		config["enableShell"] = h.config.EnableShell
 		config["groupByNamespace"] = h.config.GroupByNamespace
+		config["groupedNetworks"] = h.config.GroupedNetworks
 	}
 
 	if user != nil {

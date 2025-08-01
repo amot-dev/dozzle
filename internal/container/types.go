@@ -30,6 +30,7 @@ type Container struct {
 	CPULimit    float64                          `json:"cpuLimit"`
 	Group       string                           `json:"group,omitempty"`
 	FullyLoaded bool                             `json:"-,omitempty"`
+	Networks    []string                         `json:"networks,omitempty"`
 }
 
 func (container Container) ToProto() pb.Container {
@@ -93,6 +94,7 @@ func FromProto(c *pb.Container) Container {
 		MemoryLimit: c.MemoryLimit,
 		CPULimit:    c.CpuLimit,
 		FullyLoaded: c.FullyLoaded,
+		Networks:    []string{},
 	}
 }
 

@@ -20,6 +20,7 @@ Configurations can be done with flags or environment variables. The table below 
 | `--enable-shell`       | `DOZZLE_ENABLE_SHELL`       | `false`        |
 | `--filter`             | `DOZZLE_FILTER`             | `""`           |
 | `--group-by-namespace` | `DOZZLE_GROUP_BY_NAMESPACE` | `non-single`   |
+| `--grouped-network`    | `DOZZLE_GROUPED_NETWORK`    | `example-net`  |
 | `--no-analytics`       | `DOZZLE_NO_ANALYTICS`       | `false`        |
 | `--mode`               | `DOZZLE_MODE`               | `server`       |
 | `--remote-host`        | `DOZZLE_REMOTE_HOST`        |                |
