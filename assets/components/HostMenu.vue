@@ -198,10 +198,11 @@ const menuItems = computed(() => {
     items.push({ label: "label.pinned", containers: pinned, icon: Pin });
   }
   for (const [label, containers] of Object.entries(namespaced).sort(([a], [b]) => a.localeCompare(b))) {
-    if (containers.length > 1) {
+    const groupContainers = config.groupByNamespace === "always" || (config.groupByNamespace === "non-single" && containers.length > 1)
+    if (groupContainers) {
       items.push({ label, containers, icon: Stack });
     } else {
-      singular.push(containers[0]);
+      singular.push(...containers);
     }
   }
 

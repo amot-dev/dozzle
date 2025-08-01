@@ -36,6 +36,7 @@ type Config struct {
 	Authorization Authorization
 	EnableActions bool
 	EnableShell   bool
+	GroupByNamespace string
 	Labels        container.ContainerLabels
 }
 
